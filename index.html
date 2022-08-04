@@ -23,27 +23,130 @@
     </header>
 
     <!-- main content -->
-    <main>
-      <div class="container">
-        <!-- intro about the program -->
-        <div class="row mb-4">
-          <h2>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
-            cupiditate dignissimos sed quisquam provident in eum tempora
-            mollitia, quia eius consequatur voluptatum. Explicabo quos, itaque
-            est tempore illum distinctio laborum.
-          </h2>
-        </div>
-        <div class="row">
-          <div class="chapters col-lg-4 col-md-6 col-sm-12">
-            <h2>Left-side</h2>
+    <section id="viewContent">
+      <main>
+        <div class="container">
+          <!-- intro about the program -->
+          <div class="row mb-4">
+            <h2>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+              cupiditate dignissimos sed quisquam provident in eum tempora
+              mollitia, quia eius consequatur voluptatum. Explicabo quos, itaque
+              est tempore illum distinctio laborum.
+            </h2>
           </div>
-          <div class="info col-lg-8 col-md-6 col-sm-12">
-            <h2>Right Side</h2>
+
+          <!-- view types -->
+          <div class="row">
+            <div class="viewType mb-4">
+              <div class="reading active" data-target="content">
+                <i class="fab fa-readme"></i>
+                <p>Reading</p>
+              </div>
+              <div class="video" data-target="videos">
+                <i class="fas fa-play-circle"></i>
+                <p>Videos</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- program content -->
+          <div class="programContent">
+            <!-- chapter reading content -->
+            <div class="row viewChapters active" id="content">
+              <div class="chapters col-lg-4 col-md-6 col-sm-12">
+                <div class="chapter1">
+                  <div class="accordion mb-1" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#chapterOne"
+                          aria-expanded="true"
+                          aria-controls="collapseOne"
+                        >
+                          Contents
+                        </button>
+                      </h2>
+                      <div
+                        id="chapterOne"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <!-- introduction  -->
+                          <p>Introduction</p>
+                          <ul>
+                            <li><a href="">Food borne disease </a></li>
+                            <li><a href="">Common food hazards</a></li>
+                            <li><a href="">Bacteria </a></li>
+                            <li><a href="">The growth of bacteria </a></li>
+                            <li><a href="">Viruses</a></li>
+                          </ul>
+
+                          <!-- ch-2 -->
+                          <p>Good Hygiene Practice (GHP)</p>
+                          <ul>
+                            <li><a href="">Protective clothing </a></li>
+                            <li><a href="">Personal hygiene</a></li>
+                            <li><a href="">Hand washing</a></li>
+                            <li><a href="">Separation</a></li>
+                            <li><a href="">High risk food</a></li>
+                            <li><a href="">Operational hygiene </a></li>
+                            <li><a href="">Water safety</a></li>
+                            <li><a href="">Pest control </a></li>
+                            <li>
+                              <a href="">High risk and low risk cleaning</a>
+                            </li>
+                            <li><a href="">Cleaning methods</a></li>
+                            <li><a href="">Maintenance</a></li>
+                            <li><a href="">Delivery and storage</a></li>
+                          </ul>
+
+                          <!-- ch-3 -->
+                          <p>Temperature Control</p>
+                          <ul>
+                            <li><a href="">The Danger Zone</a></li>
+                          </ul>
+
+                          <!-- ch-4 -->
+                          <p>Cooking</p>
+                          <ul>
+                            <li><a href="">Cooking checks</a></li>
+                            <li><a href="">Temperature probes</a></li>
+                            <li><a href="">Hot-holding and re-heating</a></li>
+                          </ul>
+
+                          <!-- ch-5 -->
+                          <p>Cooling</p>
+                          <ul>
+                            <li><a href="">Cold storage</a></li>
+                            <li><a href="">Cold display</a></li>
+                            <li><a href="">Cooling hot food</a></li>
+                            <li><a href="">Freezing and defrosting</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="info col-lg-8 col-md-6 col-sm-12">
+                <h2>Right Side</h2>
+              </div>
+            </div>
+
+            <!-- videos content -->
+            <div class="videos" id="videos">
+              <h2>Videos is working</h2>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </section>
     <!-- external library -->
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- main js file -->

@@ -1,0 +1,85 @@
+/* global rules */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.row > * {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+.accordion-button {
+  box-shadow: none !important;
+}
+
+.viewType {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.viewType p {
+  padding: 0;
+  margin: 0 12px;
+}
+
+.viewType > div {
+  background-color: whitesmoke;
+  padding: 15px;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  transition: all 0.4s ease;
+}
+
+.viewType > div.active {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: none;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.viewType .reading {
+  flex: 6;
+}
+
+.viewType .video {
+  flex: 6;
+}
+
+.programContent {
+  position: relative;
+  width: 100%;
+}
+
+.programContent .viewChapters,
+.programContent .videos {
+  position: absolute;
+  width: 100%;
+  display: none;
+}
+
+.programContent .viewChapters.active,
+.programContent .videos.active {
+  display: flex;
+}
