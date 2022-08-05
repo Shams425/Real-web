@@ -4,13 +4,6 @@
   margin: 0;
 }
 
-.row > * {
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
-
 ul {
   list-style: none;
 }
@@ -21,6 +14,10 @@ ul li {
 
 ul li a {
   text-decoration: none;
+}
+
+h2.title {
+  color: rgb(77, 153, 128);
 }
 
 .accordion-button {
@@ -82,4 +79,37 @@ ul li a {
 .programContent .viewChapters.active,
 .programContent .videos.active {
   display: flex;
+}
+
+.programContent .info {
+  padding-left: 15px;
+  max-height: 1000px;
+  overflow: auto;
+}
+
+.programContent .chapters {
+  position: relative;
+}
+
+.viewChapters .toggleMenu {
+  display: none;
+}
+
+@media screen and (max-width: 990px) {
+  .viewChapters .toggleMenu {
+    display: block;
+  }
+
+  /* .viewChapters .accordion-button {
+    display: none;
+  } */
+
+  .viewChapters .accordion {
+    position: absolute;
+    left: -100%;
+    transition: all 0.4s ease;
+  }
+  .viewChapters .accordion.active {
+    left: 0;
+  }
 }

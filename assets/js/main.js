@@ -29,3 +29,13 @@ showVideos.addEventListener("click", () => {
     .querySelector(`#${showVideos.getAttribute("data-target")}`)
     .classList.add("active");
 });
+
+//show the content
+const toggle = document.querySelector(".toggleMenu");
+
+toggle.addEventListener("click", () => {
+  console.log("it's working");
+  document
+    .querySelector(`${toggle.getAttribute("data-target")}`)
+    .classList.toggle("active");
+});
