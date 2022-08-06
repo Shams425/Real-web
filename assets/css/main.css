@@ -20,8 +20,19 @@ ul li a {
   color: rgb(77, 153, 128);
 }
 
+.chapter {
+  background-color: rgb(77, 153, 128);
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
 .accordion-button {
   box-shadow: none !important;
+}
+
+.chapters {
+  position: relative;
 }
 
 .viewType {
@@ -66,50 +77,49 @@ ul li a {
 
 .programContent {
   position: relative;
-  width: 100%;
 }
 
-.programContent .viewChapters,
-.programContent .videos {
+.viewChapters,
+.videos {
   position: absolute;
   width: 100%;
   display: none;
 }
 
-.programContent .viewChapters.active,
-.programContent .videos.active {
+.viewChapters.active,
+.videos.active {
   display: flex;
 }
 
-.programContent .info {
+.info {
   padding-left: 15px;
-  max-height: 1000px;
-  overflow: auto;
 }
 
-.programContent .chapters {
-  position: relative;
-}
-
-.viewChapters .toggleMenu {
+.toggleMenu {
   display: none;
+  color: white;
 }
 
 @media screen and (max-width: 990px) {
-  .viewChapters .toggleMenu {
+  .toggleMenu {
     display: block;
   }
 
-  /* .viewChapters .accordion-button {
+  /*  .accordion-button {
     display: none;
   } */
 
-  .viewChapters .accordion {
+  .accordion {
     position: absolute;
+    z-index: 99;
     left: -100%;
     transition: all 0.4s ease;
+    opacity: 0.5;
   }
-  .viewChapters .accordion.active {
+  .accordion:hover {
+    opacity: 1;
+  }
+  .accordion.active {
     left: 0;
   }
 }
