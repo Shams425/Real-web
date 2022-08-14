@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+:root {
+  --mainColor: #5775ff;
+}
+
 ul {
   list-style: none;
 }
@@ -27,9 +31,60 @@ ul li a {
   padding: 10px;
 }
 
-.accordion-button {
-  box-shadow: none !important;
+.accordion-item {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
+
+.accordion-button,
+.accordion-button:not(.collapsed) {
+  background-color: transparent;
+  box-shadow: none !important;
+  border: none;
+  position: relative;
+}
+
+.accordion-button:focus {
+  background-color: transparent !important;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.accordion-button::after {
+  background-image: none !important;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--mainColor);
+}
+
+.accordion-button.collapsed::before,
+.accordion-button::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: calc(1.25rem + 5px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.accordion-button.collapsed:hover::before {
+  background-color: rgba(100, 135, 250, 0.514);
+  opacity: 1;
+}
+
+.accordion-button::before {
+  background-color: var(--mainColor);
+  opacity: 1;
+}
+
+/*Global rules ends*/
 
 .chapters {
   position: relative;
