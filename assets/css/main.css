@@ -8,16 +8,23 @@
   --mainColor: #5775ff;
 }
 
+body {
+  background-color: #fbfbfb;
+}
+
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 ul li {
   margin: 10px 0;
 }
 
-ul li a {
+a {
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .title {
@@ -31,7 +38,7 @@ ul li a {
   padding: 10px;
 }
 
-.accordion-item {
+.chapters .accordion-item {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
@@ -39,15 +46,15 @@ ul li a {
   border-bottom-left-radius: 0 !important;
 }
 
-.accordion-button,
-.accordion-button:not(.collapsed) {
+.chapters .accordion-button,
+.chapters .accordion-button:not(.collapsed) {
   background-color: transparent;
   box-shadow: none !important;
   border: none;
   position: relative;
 }
 
-.accordion-button:focus {
+.chapters .accordion-button:focus {
   background-color: transparent !important;
   border-color: rgba(0, 0, 0, 0.3);
 }
@@ -86,6 +93,75 @@ ul li a {
 
 /*Global rules ends*/
 
+/* left side  */
+aside,
+main {
+  box-shadow: 1px 6px 15px 1px #cfcfcf;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+}
+
+aside header,
+aside .exam {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+aside header p,
+aside .exam button {
+  width: 80%;
+  height: 60px;
+  font-size: 25px;
+  font-weight: 600;
+  background: linear-gradient(to top, #2f53f4 21%, #617eff 79%);
+  color: white;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+aside .exam button {
+  border-radius: 30px;
+  width: 60%;
+}
+
+aside .exam button a {
+  color: white;
+}
+
+aside .accordion a {
+  color: black;
+}
+
+aside .accordion li {
+  padding: 5px 20px;
+  transition: all 0.3s ease;
+}
+
+aside .accordion ul li:hover {
+  background-color: var(--mainColor);
+}
+
+aside .accordion ul li:hover a {
+  color: white;
+}
+
+/* left side ends */
+
+/* main content start */
+article header .user {
+  width: 150px;
+}
+
+article header .user i {
+  font-size: 35px;
+  margin: 0 15px;
+}
 .chapters {
   position: relative;
 }
@@ -134,18 +210,6 @@ ul li a {
   position: relative;
 }
 
-.viewChapters,
-.videos {
-  position: absolute;
-  width: 100%;
-  display: none;
-}
-
-.viewChapters.active,
-.videos.active {
-  display: flex;
-}
-
 .info {
   padding-left: 15px;
 }
@@ -159,10 +223,6 @@ ul li a {
   .toggleMenu {
     display: block;
   }
-
-  /*  .accordion-button {
-    display: none;
-  } */
 
   .accordion {
     position: absolute;
