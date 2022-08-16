@@ -12,6 +12,13 @@ body {
   background-color: #fbfbfb;
 }
 
+.appHeader {
+  max-height: 90px;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -28,14 +35,11 @@ a {
 }
 
 .title {
-  color: rgb(77, 153, 128);
+  color: var(--mainColor);
 }
 
-.chapter {
-  background-color: rgb(77, 153, 128);
-  color: white;
-  text-align: center;
-  padding: 10px;
+.accordion {
+  width: 75%;
 }
 
 .chapters .accordion-item {
@@ -97,9 +101,17 @@ a {
 aside,
 main {
   box-shadow: 1px 6px 15px 1px #cfcfcf;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 25px;
+  padding: 20px;
   background-color: white;
+}
+
+aside {
+  position: fixed;
+  left: 0;
+  top: 0px;
+  width: 27% !important;
+  padding: 20px;
 }
 
 aside header,
@@ -108,11 +120,12 @@ aside .exam {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 aside header p,
 aside .exam button {
-  width: 80%;
+  width: 70%;
   height: 60px;
   font-size: 25px;
   font-weight: 600;
@@ -132,6 +145,7 @@ aside .exam button {
 
 aside .exam button a {
   color: white;
+  font-size: 1ch;
 }
 
 aside .accordion a {
@@ -141,6 +155,7 @@ aside .accordion a {
 aside .accordion li {
   padding: 5px 20px;
   transition: all 0.3s ease;
+  max-width: 250px;
 }
 
 aside .accordion ul li:hover {
@@ -154,6 +169,12 @@ aside .accordion ul li:hover a {
 /* left side ends */
 
 /* main content start */
+article {
+  position: relative;
+  left: 30%;
+  top: 0px;
+  width: 70% !important;
+}
 article header .user {
   width: 150px;
 }
@@ -162,8 +183,18 @@ article header .user i {
   font-size: 35px;
   margin: 0 15px;
 }
+
 .chapters {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+.chapter {
+  color: black;
+  text-align: center;
+  padding: 10px;
 }
 
 .viewType {
@@ -212,6 +243,8 @@ article header .user i {
 
 .info {
   padding-left: 15px;
+  max-height: 75vh;
+  overflow: hidden;
 }
 
 .toggleMenu {
@@ -237,4 +270,23 @@ article header .user i {
   .accordion.active {
     left: 0;
   }
+}
+
+.pageNavigation {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 15;
+}
+
+.pageNavigation .pageNumber {
+  display: flex;
+  margin: 0 35px;
+}
+
+.pageNavigation .pageNumber p {
+  margin: 0 5px;
 }

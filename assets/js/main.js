@@ -1,7 +1,7 @@
-//making all the Contents in same length
+//making all the Contents chapters in same length
 const chaptersTitle = document.querySelectorAll(".accordion h2");
 const contents = document.querySelectorAll(".accordion-body li a");
-const contentsList = document.querySelectorAll(".accordion-body ul");
+const contentsList = document.querySelectorAll(".accordion-body ul li");
 
 let result = [];
 contents.forEach((content) => {
@@ -13,10 +13,12 @@ let largest = result.reduce((acc = "", val1) =>
 );
 
 contents.forEach((content) => {
-  if (content.textContent.length < largest.length + 5) {
-    for (let i = 0; i < 30; i++) {
+  if (content.textContent.length < largest.length) {
+    for (let i = 0; i < Math.floor(250 / 8) - content.textContent.length; i++) {
       content.textContent += ".";
     }
   }
   return content;
 });
+
+console.log(contentsList[0].clientWidth);
