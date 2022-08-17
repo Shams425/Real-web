@@ -44,6 +44,8 @@ html {
   display: flex;
   justify-content: space-between;
   padding: 0 80px;
+  z-index: 89;
+  display: none;
 }
 
 .owl-nav button {
@@ -70,6 +72,17 @@ html {
   height: 100%;
 }
 
+.owl-dots {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 150px;
+  bottom: 14%;
+  left: 35%;
+  padding: 20px 0;
+  overflow-x: hidden;
+}
+
 .owl-theme .owl-dots .owl-dot {
   outline: none;
   background: transparent;
@@ -79,14 +92,7 @@ html {
   border-radius: 50%;
   border-color: transparent;
   position: relative;
-}
-
-.owl-theme .owl-dots .owl-dot::before {
-  content: attr("data-page-number");
-  color: black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  display: none;
 }
 
 .owl-theme .owl-dots .owl-dot.active,
@@ -94,6 +100,7 @@ html {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 1px 6px 15px 1px #cfcfcf;
+  display: block;
 }
 
 ul {

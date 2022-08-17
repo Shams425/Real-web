@@ -1,8 +1,10 @@
+let pageMove = 0;
 //owl carousal library for sliding pages
 $(function () {
   $("#pagesContainer").owlCarousel({
     loop: false,
     margin: 30,
+    autoHeight: true,
     responsive: {
       0: {
         items: 1,
@@ -15,9 +17,41 @@ $(function () {
 
   //setting the page number
   const pageNumbers = document.querySelectorAll(".owl-dot");
+  const navButtonNext = document.querySelector(".owl-nav .owl-next");
+  const navButtonBack = document.querySelector(".owl-nav .owl-prev");
+
+  let nowIndex = 0;
 
   pageNumbers.forEach((page, index) => {
     page.textContent = index + 1;
+  });
+
+  navButtonNext.addEventListener("click", (e) => {
+    pageNumbers.forEach((page) => {
+      if (page.classList.contains("active")) {
+        nowIndex = parseInt(page.textContent);
+        pageNumbers[nowIndex - 1].style.display = "block";
+      } else {
+        page.style.display = "none";
+      }
+      page.style.left = `-${page.clientWidth * nowIndex}px`;
+    });
+    console.log(nowIndex);
+  });
+
+  navButtonBack.addEventListener("click", () => {
+    pageNumbers.forEach((page) => {
+      if (page.classList.contains("active")) {
+        nowIndex = parseInt(page.textContent);
+        pageNumbers[nowIndex].style.display = "block";
+      } else {
+        page.style.display = "none";
+      }
+      pageNumbers.forEach((page) => {
+        page.style.left = `-${page.clientWidth * nowIndex}px`;
+      });
+    });
+    console.log(nowIndex);
   });
 });
 
