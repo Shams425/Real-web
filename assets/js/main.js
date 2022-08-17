@@ -19,8 +19,6 @@ $(function () {
   pageNumbers.forEach((page, index) => {
     page.textContent = index + 1;
   });
-
-  console.log(pageNumbers);
 });
 
 //making all the Contents chapters in same length
