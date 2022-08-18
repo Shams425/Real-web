@@ -43,9 +43,8 @@ html {
 .owl-nav {
   display: flex;
   justify-content: space-between;
-  padding: 0 80px;
+  padding: 0 200px;
   z-index: 89;
-  display: none;
 }
 
 .owl-nav button {
@@ -76,7 +75,7 @@ html {
   position: relative;
   display: flex;
   align-items: center;
-  width: 150px;
+  width: 300px;
   bottom: 14%;
   left: 35%;
   padding: 20px 0;
@@ -88,7 +87,7 @@ html {
   background: transparent;
   width: 40px;
   height: 40px;
-  margin: 0 15px;
+  margin: 0 5px;
   border-radius: 50%;
   border-color: transparent;
   position: relative;
@@ -98,9 +97,20 @@ html {
 .owl-theme .owl-dots .owl-dot.active,
 .owl-theme .owl-dots .owl-dot:hover {
   background: white;
-  border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 1px 6px 15px 1px #cfcfcf;
   display: block;
+}
+
+.owl-theme .owl-dots .owl-dot.standBy {
+  background: transparent;
+  box-shadow: none;
+}
+
+.owl-theme .owl-dots .owl-dot.showDots::before {
+  content: ".......";
+  position: absolute;
+  top: 35%;
+  right: -90%;
 }
 
 ul {
