@@ -6,6 +6,7 @@
 
 :root {
   --mainColor: #5775ff;
+  --secondColor: #99acff;
 }
 
 body {
@@ -133,7 +134,11 @@ a {
 }
 
 .accordion {
-  width: 75%;
+  width: 100%;
+}
+
+.accordion-body {
+  padding: 0 !important;
 }
 
 .chapters .accordion-item {
@@ -196,7 +201,6 @@ aside,
 main {
   box-shadow: 1px 6px 15px 1px #cfcfcf;
   border-radius: 25px;
-  padding: 20px;
   background-color: white;
 }
 
@@ -205,9 +209,9 @@ aside {
   left: 0;
   top: 0px;
   width: 27% !important;
-  padding: 20px;
   max-height: 650px;
   overflow: auto;
+  padding: 0;
 }
 
 aside header,
@@ -217,6 +221,7 @@ aside .exam {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  padding: 20px;
 }
 
 aside header p,
@@ -246,20 +251,28 @@ aside .exam button a {
 
 aside .accordion a {
   color: black;
+  flex: 1;
 }
 
 aside .accordion li {
-  padding: 5px 20px;
+  padding: 5px 30px 5px 50px;
   transition: all 0.3s ease;
-  max-width: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 aside .accordion ul li:hover {
-  background-color: var(--mainColor);
+  background-color: var(--secondColor);
 }
 
 aside .accordion ul li:hover a {
   color: white;
+}
+
+aside .accordion ul li .pageNum {
+  min-width: 10px;
 }
 
 /* left side ends */
@@ -271,6 +284,7 @@ article {
   top: 0px;
   width: 70% !important;
 }
+
 article header .user {
   width: 150px;
 }
@@ -280,11 +294,16 @@ article header .user i {
   margin: 0 15px;
 }
 
-.chapters {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: left;
+article main {
+  padding: 20px 10px 20px 20px;
+}
+
+article main p {
+  padding-left: 20px;
+}
+
+article main ul {
+  padding-left: 40px;
 }
 
 .chapter {
@@ -386,4 +405,11 @@ article header .user i {
 
 .pageNavigation .pageNumber p {
   margin: 0 5px;
+}
+
+@media screen and (max-width: 1200px) {
+  aside .accordion ul li a,
+  aside .accordion button {
+    font-size: 15px;
+  }
 }

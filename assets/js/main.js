@@ -78,7 +78,7 @@ $(function () {
 //making all the Contents chapters in same length
 const chaptersTitle = document.querySelectorAll(".accordion h2");
 const contents = document.querySelectorAll(".accordion-body li a");
-const contentsList = document.querySelectorAll(".accordion-body ul li");
+const showPageNum = document.querySelectorAll(".accordion-body .pageNum");
 
 let result = [];
 contents.forEach((content) => {
@@ -89,11 +89,25 @@ let largest = result.reduce((acc = "", val1) =>
   acc.length < val1.length ? (acc = val1) : (acc = acc)
 );
 
-contents.forEach((content) => {
+let listWidth = document.querySelector(".accordion").clientWidth;
+const listPadding = 80;
+const pageNumWidth = 10;
+const scrollWidth = 6;
+let PageContentWidth = Math.round(
+  (listWidth - listPadding - pageNumWidth - scrollWidth) / 8
+);
+
+console.log(listWidth - scrollWidth, PageContentWidth);
+
+contents.forEach((content, index) => {
   if (content.textContent.length < largest.length) {
-    for (let i = 0; i < Math.floor(250 / 8) - content.textContent.length; i++) {
+    for (let i = 0; i < 0 / 8; i++) {
       content.textContent += ".";
     }
   }
   return content;
+});
+
+showPageNum.forEach((list, index) => {
+  list.textContent = index + 1;
 });
