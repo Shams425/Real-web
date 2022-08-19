@@ -30,7 +30,9 @@ $(function () {
     currentIndex++;
 
     pageNumbers.forEach((page) => {
+      page.classList.remove("active");
       page.classList.remove("showDots");
+      page.classList.remove("standBy");
     });
 
     if (currentIndex < pageNumbers.length - 3) {
@@ -38,7 +40,7 @@ $(function () {
       pageNumbers[currentIndex].classList.add("standBy");
       pageNumbers[currentIndex + 1].classList.add("standBy");
       pageNumbers[pageNumbers.length - 1].style.left = "30px";
-      pageNumbers[pageNumbers.length - 1].classList.add("active");
+      pageNumbers[pageNumbers.length - 1].classList.add("standBy");
       pageNumbers[currentIndex + 1].classList.add("showDots");
     } else {
       pageNumbers[currentIndex - 1].classList.add("active");
@@ -54,6 +56,7 @@ $(function () {
     if (currentIndex <= 1) currentIndex = 1;
 
     pageNumbers.forEach((page) => {
+      page.classList.remove("active");
       page.classList.remove("showDots");
       page.classList.remove("standBy");
     });

@@ -45,6 +45,7 @@ html {
   display: flex;
   justify-content: space-between;
   padding: 0 200px;
+  position: relative;
   z-index: 89;
 }
 
@@ -76,9 +77,8 @@ html {
   position: relative;
   display: flex;
   align-items: center;
-  width: 300px;
-  bottom: 14%;
-  left: 35%;
+  justify-content: center;
+  width: 100%;
   padding: 20px 0;
   overflow-x: hidden;
 }
@@ -93,6 +93,7 @@ html {
   border-color: transparent;
   position: relative;
   display: none;
+  z-index: 80;
 }
 
 .owl-theme .owl-dots .owl-dot.active,
@@ -155,6 +156,9 @@ a {
   box-shadow: none !important;
   border: none;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  color: var(--mainColor);
 }
 
 .chapters .accordion-button:focus {
@@ -163,35 +167,41 @@ a {
 }
 
 .accordion-button::after {
-  background-image: none !important;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid var(--mainColor);
+  content: unset !important;
 }
 
 .accordion-button.collapsed::before,
 .accordion-button::before {
-  content: "";
-  position: absolute;
-  top: 40%;
-  right: calc(1.25rem + 5px);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  opacity: 0;
-  transition: all 0.3s ease;
+  content: unset !important;
 }
 
-.accordion-button.collapsed:hover::before {
+.accordion-button span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid var(--mainColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-button.collapsed span .innerCircle,
+.accordion-button:not(.collapsed) span .innerCircle {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.accordion-button.collapsed:hover .innerCircle {
   background-color: rgba(100, 135, 250, 0.514);
   opacity: 1;
 }
 
-.accordion-button::before {
+.accordion-button:not(.collapsed) .innerCircle {
   background-color: var(--mainColor);
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 /*Global rules ends*/
@@ -208,10 +218,10 @@ aside {
   position: fixed;
   left: 0;
   top: 0px;
-  width: 27% !important;
+  width: 27%;
   max-height: 650px;
   overflow: auto;
-  padding: 0;
+  padding: 0 !important;
 }
 
 aside header,
@@ -249,6 +259,11 @@ aside .exam button a {
   font-size: 1ch;
 }
 
+aside .accordion-header {
+  width: 85%;
+  margin: 0 auto;
+}
+
 aside .accordion a {
   color: black;
   flex: 1;
@@ -282,7 +297,7 @@ article {
   position: relative;
   left: 30%;
   top: 0px;
-  width: 70% !important;
+  width: 70%;
 }
 
 article header .user {
@@ -410,6 +425,18 @@ article main ul {
 @media screen and (max-width: 1200px) {
   aside .accordion ul li a,
   aside .accordion button {
-    font-size: 15px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  article {
+    left: 0;
+    width: 100%;
+  }
+
+  aside {
+    width: 30%;
+    left: -100vw;
   }
 }
