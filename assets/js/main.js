@@ -114,3 +114,26 @@ contents.forEach((content, index) => {
 showPageNum.forEach((list, index) => {
   list.textContent = index + 1;
 });
+
+//settings
+const settingsIcon = document.querySelector(".settings");
+const overlay = document.querySelector(".overlay");
+const asideContents = document.querySelector("aside");
+
+settingsIcon.addEventListener("click", () => {
+  overlay.classList.add("active");
+  asideContents.classList.add("active");
+
+  window.addEventListener("keyup", (e) => {
+    if (e.key !== "Escape") return;
+    overlay.classList.remove("active");
+    asideContents.classList.remove("active");
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target == overlay) {
+      overlay.classList.remove("active");
+      asideContents.classList.remove("active");
+    }
+  });
+});

@@ -11,10 +11,25 @@
 
 body {
   background-color: #fbfbfb;
+  position: relative;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -120vw;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.452);
+}
+
+.overlay.active {
+  z-index: 99;
+  left: 0;
 }
 
 *::-webkit-scrollbar {
@@ -44,13 +59,15 @@ html {
 .owl-nav {
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
+  width: 90%;
   padding: 0 200px;
   position: relative;
   z-index: 89;
 }
 
 .owl-nav button {
-  margin: 0 15px;
+  margin: 0 50px;
   outline: none;
   border: none;
   width: 50px;
@@ -222,6 +239,8 @@ aside {
   max-height: 650px;
   overflow: auto;
   padding: 0 !important;
+  transition: all 0.4s ease;
+  z-index: 999;
 }
 
 aside header,
@@ -231,7 +250,7 @@ aside .exam {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 15px;
 }
 
 aside header p,
@@ -256,7 +275,7 @@ aside .exam button {
 
 aside .exam button a {
   color: white;
-  font-size: 1ch;
+  font-size: 25px;
 }
 
 aside .accordion-header {
@@ -383,26 +402,6 @@ article main ul {
   color: white;
 }
 
-@media screen and (max-width: 990px) {
-  .toggleMenu {
-    display: block;
-  }
-
-  .accordion {
-    position: absolute;
-    z-index: 99;
-    left: -100%;
-    transition: all 0.4s ease;
-    opacity: 0.5;
-  }
-  .accordion:hover {
-    opacity: 1;
-  }
-  .accordion.active {
-    left: 0;
-  }
-}
-
 .pageNavigation {
   position: absolute;
   bottom: 0px;
@@ -436,7 +435,33 @@ article main ul {
   }
 
   aside {
-    width: 30%;
+    width: 50vw;
     left: -100vw;
+    border-radius: 12px;
+  }
+  aside header p {
+    height: 40px;
+    font-size: 15px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  aside .exam button {
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  aside .exam {
+    padding-top: 0;
+  }
+
+  aside .exam button a {
+    font-size: 15px;
+  }
+
+  aside.active {
+    width: 50vw;
+    left: 0;
+    z-index: 999;
   }
 }
