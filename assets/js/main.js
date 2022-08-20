@@ -116,24 +116,27 @@ showPageNum.forEach((list, index) => {
 });
 
 //settings
-const settingsIcon = document.querySelector(".settings");
+const settingsIcon = document.querySelector(".settingIcon");
 const overlay = document.querySelector(".overlay");
 const asideContents = document.querySelector("aside");
 
 settingsIcon.addEventListener("click", () => {
   overlay.classList.add("active");
   asideContents.classList.add("active");
+  settingsIcon.classList.add("active");
 
   window.addEventListener("keyup", (e) => {
     if (e.key !== "Escape") return;
     overlay.classList.remove("active");
     asideContents.classList.remove("active");
+    settingsIcon.classList.remove("active");
   });
 
   window.addEventListener("click", (e) => {
     if (e.target == overlay) {
       overlay.classList.remove("active");
       asideContents.classList.remove("active");
+      settingsIcon.classList.remove("active");
     }
   });
 });

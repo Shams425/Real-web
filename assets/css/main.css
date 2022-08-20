@@ -32,6 +32,23 @@ html {
   left: 0;
 }
 
+.settingIcon {
+  transition: all 0.4s ease;
+}
+
+.settingIcon.active {
+  transform: rotate(360deg);
+  transition: all 0.4s ease;
+}
+
+img.border-radius {
+  border-radius: 25px;
+}
+
+img {
+  object-fit: cover;
+}
+
 *::-webkit-scrollbar {
   width: 6px;
 }
@@ -463,5 +480,9 @@ article main ul {
     width: 50vw;
     left: 0;
     z-index: 999;
+  }
+
+  .owl-nav {
+    padding: 0;
   }
 }
