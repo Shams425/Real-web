@@ -4,7 +4,8 @@ $(function () {
   $("#pagesContainer").owlCarousel({
     loop: false,
     margin: 30,
-    autoHeight: true,
+    autoHeight: false,
+    nav: false,
     responsive: {
       0: {
         items: 1,

@@ -179,9 +179,16 @@ a {
 .chapters .accordion-item {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  border-bottom-right-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
+  position: relative;
+}
+.chapters .accordion-item::before {
+  content: "";
+  position: absolute;
+  width: 85%;
+  left: 8%;
+  bottom: 0;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .chapters .accordion-button,
@@ -193,6 +200,7 @@ a {
   display: flex;
   justify-content: space-between;
   color: var(--mainColor);
+  font-size: 12px;
 }
 
 .chapters .accordion-button:focus {
@@ -273,12 +281,12 @@ aside .exam {
 aside header p,
 aside .exam button {
   width: 70%;
-  height: 60px;
-  font-size: 25px;
-  font-weight: 600;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 400;
   background: linear-gradient(to top, #2f53f4 21%, #617eff 79%);
   color: white;
-  border-radius: 15px;
+  border-radius: 12px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -318,12 +326,9 @@ aside .accordion ul li:hover {
   background-color: var(--secondColor);
 }
 
-aside .accordion ul li:hover a {
-  color: white;
-}
-
 aside .accordion ul li .pageNum {
   min-width: 10px;
+  padding-right: 16px;
 }
 
 /* left side ends */
@@ -441,7 +446,7 @@ article main ul {
 @media screen and (max-width: 1200px) {
   aside .accordion ul li a,
   aside .accordion button {
-    font-size: 13px;
+    font-size: 11px;
   }
 }
 
