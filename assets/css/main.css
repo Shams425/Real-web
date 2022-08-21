@@ -67,6 +67,9 @@ img {
 
 .owl-item {
   padding: 0 20px;
+  max-height: 550px;
+  margin-right: 30px;
+  overflow-y: auto;
 }
 
 .owl-stage {
@@ -74,17 +77,12 @@ img {
 }
 
 .owl-nav {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  width: 90%;
-  padding: 0 200px;
   position: relative;
+  top: 15px;
   z-index: 89;
 }
 
 .owl-nav button {
-  margin: 0 50px;
   outline: none;
   border: none;
   width: 50px;
@@ -93,10 +91,12 @@ img {
   font-size: 50px;
   color: white;
   background: linear-gradient(to top, #2f53f4 21%, #617eff 79%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  position: absolute;
+  left: 25%;
+}
+
+.owl-nav button:last-of-type {
+  left: 70%;
 }
 
 .owl-nav button span {
@@ -113,6 +113,7 @@ img {
   align-items: center;
   justify-content: center;
   width: 100%;
+  right: 5%;
   padding: 20px 0;
   overflow-x: hidden;
 }
@@ -140,6 +141,7 @@ img {
 .owl-theme .owl-dots .owl-dot.standBy {
   background: transparent;
   box-shadow: none;
+  display: block;
 }
 
 .owl-theme .owl-dots .owl-dot.showDots::before {
@@ -252,14 +254,14 @@ a {
 aside,
 main {
   box-shadow: 1px 6px 15px 1px #cfcfcf;
-  border-radius: 25px;
+  border-radius: 18px;
   background-color: white;
 }
 
 aside {
   position: fixed;
-  left: 0;
-  top: 0px;
+  left: 10px;
+  top: 5px;
   width: 27%;
   max-height: 650px;
   overflow: auto;
@@ -281,10 +283,11 @@ aside .exam {
 aside header p,
 aside .exam button {
   width: 70%;
-  height: 40px;
-  font-size: 14px;
+  height: 45px;
+  font-size: 15px;
   font-weight: 400;
   background: linear-gradient(to top, #2f53f4 21%, #617eff 79%);
+  box-shadow: 1px 6px 15px 1px #cfcfcf;
   color: white;
   border-radius: 12px;
   text-align: center;
@@ -296,11 +299,12 @@ aside .exam button {
 aside .exam button {
   border-radius: 30px;
   width: 60%;
+  height: 35px;
 }
 
 aside .exam button a {
   color: white;
-  font-size: 25px;
+  font-size: 15px;
 }
 
 aside .accordion-header {
@@ -414,7 +418,6 @@ article main ul {
 
 .info {
   padding-left: 15px;
-  max-height: 75vh;
   overflow-x: hidden;
   overflow-y: auto;
 }

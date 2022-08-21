@@ -25,18 +25,27 @@ $(function () {
 
   pageNumbers.forEach((page, index) => {
     page.textContent = index + 1;
+    pageNumbers[0].classList.add("active");
+    pageNumbers[1].classList.add("standBy");
+    pageNumbers[2].classList.add("standBy");
+    pageNumbers[2].classList.add("showDots");
+    pageNumbers[pageNumbers.length - 1].style.left = "30px";
+    pageNumbers[pageNumbers.length - 1].classList.add("standBy");
   });
 
   navButtonNext.addEventListener("click", () => {
-    currentIndex++;
+    if (currentIndex > pageNumbers.length - 1) return;
 
     pageNumbers.forEach((page) => {
+      if (page.classList.contains("active"))
+        currentIndex = parseInt(page.textContent);
       page.classList.remove("active");
       page.classList.remove("showDots");
       page.classList.remove("standBy");
     });
+    console.log(currentIndex);
 
-    if (currentIndex < pageNumbers.length - 3) {
+    if (currentIndex < pageNumbers.length - 2) {
       pageNumbers[currentIndex - 1].classList.add("active");
       pageNumbers[currentIndex].classList.add("standBy");
       pageNumbers[currentIndex + 1].classList.add("standBy");
@@ -44,7 +53,7 @@ $(function () {
       pageNumbers[pageNumbers.length - 1].classList.add("standBy");
       pageNumbers[currentIndex + 1].classList.add("showDots");
     } else {
-      pageNumbers[currentIndex - 1].classList.add("active");
+      currentIndex = 8;
       pageNumbers[currentIndex].classList.add("active");
       pageNumbers[currentIndex + 1].classList.add("active");
       pageNumbers[pageNumbers.length - 1].style.left = "0px";
@@ -53,23 +62,27 @@ $(function () {
   });
 
   navButtonBack.addEventListener("click", () => {
-    currentIndex--;
-    if (currentIndex <= 1) currentIndex = 1;
-
     pageNumbers.forEach((page) => {
+      if (page.classList.contains("active"))
+        currentIndex = parseInt(page.textContent);
       page.classList.remove("active");
       page.classList.remove("showDots");
       page.classList.remove("standBy");
     });
 
-    if (currentIndex < pageNumbers.length - 3) {
-      pageNumbers[currentIndex - 1].classList.add("active");
-      pageNumbers[currentIndex].classList.add("standBy");
+    if (currentIndex < 2) return;
+    if (currentIndex >= pageNumbers.length - 1) currentIndex = 8;
+
+    if (currentIndex > 1) {
+      pageNumbers[currentIndex].classList.add("active");
+      pageNumbers[currentIndex - 1].classList.add("standBy");
       pageNumbers[currentIndex + 1].classList.add("standBy");
       pageNumbers[pageNumbers.length - 1].style.left = "30px";
       pageNumbers[pageNumbers.length - 1].classList.add("standBy");
       pageNumbers[currentIndex + 1].classList.add("showDots");
+      console.log(currentIndex);
     } else {
+      currentIndex = 1;
       pageNumbers[currentIndex - 1].classList.add("active");
       pageNumbers[currentIndex].classList.add("active");
       pageNumbers[currentIndex + 1].classList.add("active");
