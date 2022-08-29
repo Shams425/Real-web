@@ -32,61 +32,6 @@ $(function () {
     pageNumbers[pageNumbers.length - 1].style.left = "30px";
     pageNumbers[pageNumbers.length - 1].classList.add("standBy");
   });
-
-  navButtonNext.addEventListener("click", () => {
-    pageNumbers.forEach((page) => {
-      if (page.classList.contains("active"))
-        currentIndex = parseInt(page.textContent);
-      page.classList.remove("active");
-      page.classList.remove("showDots");
-      page.classList.remove("standBy");
-    });
-    console.log(currentIndex);
-
-    if (currentIndex < pageNumbers.length - 2) {
-      pageNumbers[currentIndex - 1].classList.add("active");
-      pageNumbers[currentIndex].classList.add("standBy");
-      pageNumbers[currentIndex + 1].classList.add("standBy");
-      pageNumbers[pageNumbers.length - 1].style.left = "30px";
-      pageNumbers[pageNumbers.length - 1].classList.add("standBy");
-      pageNumbers[currentIndex + 1].classList.add("showDots");
-    } else {
-      currentIndex = pageNumbers.length - 3;
-      pageNumbers[currentIndex].classList.add("active");
-      pageNumbers[currentIndex + 1].classList.add("standBy");
-      pageNumbers[currentIndex - 1].classList.add("standBy");
-    }
-  });
-
-  navButtonBack.addEventListener("click", () => {
-    pageNumbers.forEach((page) => {
-      if (page.classList.contains("active"))
-        currentIndex = parseInt(page.textContent);
-      page.classList.remove("active");
-      page.classList.remove("showDots");
-      page.classList.remove("standBy");
-    });
-
-    if (currentIndex < 2) return;
-    if (currentIndex >= pageNumbers.length - 1) currentIndex = 8;
-
-    if (currentIndex > 1) {
-      pageNumbers[currentIndex].classList.add("active");
-      pageNumbers[currentIndex - 1].classList.add("standBy");
-      pageNumbers[currentIndex + 1].classList.add("standBy");
-      pageNumbers[pageNumbers.length - 1].style.left = "30px";
-      pageNumbers[pageNumbers.length - 1].classList.add("standBy");
-      pageNumbers[currentIndex + 1].classList.add("showDots");
-      console.log(currentIndex);
-    } else {
-      currentIndex = 1;
-      pageNumbers[currentIndex - 1].classList.add("active");
-      pageNumbers[currentIndex].classList.add("active");
-      pageNumbers[currentIndex + 1].classList.add("active");
-      pageNumbers[pageNumbers.length - 1].style.left = "0px";
-      pageNumbers[pageNumbers.length - 1].classList.add("active");
-    }
-  });
 });
 
 //making all the Contents chapters in same length
