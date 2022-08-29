@@ -34,8 +34,6 @@ $(function () {
   });
 
   navButtonNext.addEventListener("click", () => {
-    if (currentIndex > pageNumbers.length - 1) return;
-
     pageNumbers.forEach((page) => {
       if (page.classList.contains("active"))
         currentIndex = parseInt(page.textContent);
@@ -53,11 +51,10 @@ $(function () {
       pageNumbers[pageNumbers.length - 1].classList.add("standBy");
       pageNumbers[currentIndex + 1].classList.add("showDots");
     } else {
-      currentIndex = 8;
+      currentIndex = pageNumbers.length - 3;
       pageNumbers[currentIndex].classList.add("active");
-      pageNumbers[currentIndex + 1].classList.add("active");
-      pageNumbers[pageNumbers.length - 1].style.left = "0px";
-      pageNumbers[pageNumbers.length - 1].classList.add("active");
+      pageNumbers[currentIndex + 1].classList.add("standBy");
+      pageNumbers[currentIndex - 1].classList.add("standBy");
     }
   });
 

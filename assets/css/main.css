@@ -168,6 +168,7 @@ a {
 
 .title {
   color: var(--mainColor);
+  font-size: 18px;
 }
 
 .accordion {
@@ -360,6 +361,7 @@ article main {
 
 article main p {
   padding-left: 20px;
+  font-size: 14px;
 }
 
 article main ul {
