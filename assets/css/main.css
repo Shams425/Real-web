@@ -18,6 +18,15 @@ html {
   scroll-behavior: smooth;
 }
 
+.appHeader {
+  max-height: 90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+
 .overlay {
   position: absolute;
   width: 100%;
